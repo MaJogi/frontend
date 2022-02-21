@@ -11,9 +11,9 @@ class ValidationServiceOriginal {
       },
     })
   }
-  getValidations() {
-    return axios.get(VALIDATIONS_REST_API_URL)
-  }
+  // getValidations() {
+  //   return axios.get(VALIDATIONS_REST_API_URL)
+  // }
 }
 
 export default new ValidationServiceOriginal()

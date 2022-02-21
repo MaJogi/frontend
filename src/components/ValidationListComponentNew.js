@@ -1,15 +1,13 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import ValidationService from '../services/ValidationService'
 
-const ValidationListComponentNew = () => {
+const ValidationListComponentNew = ({ setValidations, validations }) => {
   // constructor(props) {
   //   super(props)
   //   this.state = {
   //     validations: [],
   //   }
   // }
-
-  const [validations, setValidations] = useState([])
 
   // componentDidMount() {
   //   ValidationService.getValidations().then((response) => {
@@ -20,19 +18,19 @@ const ValidationListComponentNew = () => {
 
   // const [validations, setValidations] = useState([])
 
-  useEffect(() => {
-    console.log('.')
-  }, [validations])
+  // useEffect(() => {
+
+  // }, [validations])
 
   useEffect(() => {
     ValidationService.getValidations().then((response) => {
-      this.setState({ validations: response.data })
+      setValidations(response.data)
       console.log('get' + response.data)
     })
   }, [])
 
   return (
-    <div class='container'>
+    <div className='container'>
       <h1 className='text-center'> Validations List</h1>
       <table className='table table-striped'>
         <thead>
@@ -44,7 +42,7 @@ const ValidationListComponentNew = () => {
           </tr>
         </thead>
         <tbody>
-          {this.state.validations.map((validation) => (
+          {validations.map((validation) => (
             <tr key={validation.id}>
               <td> {new Date(validation.timeStamp).toString()} </td>
               {/* <td> {new Date('6/29/2011 4:52:48 PM UTC').toDateString()} </td> */}

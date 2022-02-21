@@ -6,7 +6,7 @@ import '../bootstrap.min.css'
 import ValidationServiceOriginal from '../services/ValidationServiceOriginal'
 import { useState } from 'react'
 
-const FormComponent = () => {
+const FormComponent = ({ setValidations, validations }) => {
   const schema = yup.object().shape({
     idCode: yup.string().min(11).max(11).required(),
   })
@@ -18,14 +18,13 @@ const FormComponent = () => {
     reset,
   } = useForm({ resolver: yupResolver(schema) })
 
-  const [validationResult, setValidationResult] = useState([])
-
+  const [validationResult, setValidationResult] = useState('')
   const onSubmitHandler = (data) => {
     ValidationServiceOriginal.processIdCode(data).then((response) => {
-      setValidationResult(response.data) //Todo: Not working
-      console.log('response: ' + response.data)
+      setValidationResult(response.data.verdict)
+      const x = [...validations, response.data]
+      setValidations(x)
     })
-    console.log({ data })
     reset()
   }
 
@@ -38,7 +37,7 @@ const FormComponent = () => {
       >
         <h2>Please enter Personal Identification Code to validate it</h2>
         <br />
-        <div class='form-group'>
+        <div className='form-group'>
           <label>Estonian identification code</label>
           <input
             className='form-control'
@@ -50,11 +49,11 @@ const FormComponent = () => {
           <p>{errors.idCode?.message}</p>
           <p>{validationResult}</p>
           <br />
-          <small id='help' class='form-text text-muted'>
+          <small id='help' className='form-text text-muted'>
             Don't forget to refresh to see latest information
           </small>
         </div>
-        <button type='submit' class='btn btn-primary'>
+        <button type='submit' className='btn btn-primary'>
           Validate
         </button>
       </form>

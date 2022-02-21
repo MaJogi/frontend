@@ -9,7 +9,6 @@ class ValidationListComponent extends React.Component {
     }
   }
 
-
   componentDidMount() {
     ValidationService.getValidations().then((response) => {
       this.setState({ validations: response.data })
@@ -19,7 +18,7 @@ class ValidationListComponent extends React.Component {
 
   render() {
     return (
-      <div class='container'>
+      <div className='container'>
         <h1 className='text-center'> Validations List</h1>
         <table className='table table-striped'>
           <thead>
