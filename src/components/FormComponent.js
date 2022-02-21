@@ -3,7 +3,7 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import '../componentStyles/formStyle.css'
 import '../css/bootstrap.min.css'
-import ValidationService from '../services/ValidationService'
+import ValidationApi from '../services/ValidationApi'
 import { useState } from 'react'
 
 const FormComponent = ({ setValidations, validations }) => {
@@ -28,10 +28,10 @@ const FormComponent = ({ setValidations, validations }) => {
 
   const [validationResult, setValidationResult] = useState('')
   const onSubmitHandler = (data) => {
-    ValidationService.processIdCode(data).then((response) => {
+    ValidationApi.processIdCode(data).then((response) => {
       setValidationResult(response.data.verdict)
-      const x = [...validations, response.data]
-      setValidations(x)
+      const updatedValidations = [...validations, response.data]
+      setValidations(updatedValidations)
     })
     reset()
   }
@@ -57,7 +57,7 @@ const FormComponent = ({ setValidations, validations }) => {
           <p>{errors.idCode?.message}</p>
           <small className='form-text text-muted'>{validationResult}</small>
         </div>
-        <button type='submit' className='btn btn-primary'>
+        <button type='submit' className='btn btn-secondary'>
           Validate
         </button>
       </form>

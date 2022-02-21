@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import ValidationService from '../services/ValidationService'
+import ValidationApi from '../services/ValidationApi'
 
 const ValidationListComponentNew = ({ setValidations, validations }) => {
   useEffect(() => {
-    ValidationService.getValidations().then((response) => {
+    ValidationApi.getValidations().then((response) => {
       setValidations(response.data)
       console.log('get' + response.data)
     })
