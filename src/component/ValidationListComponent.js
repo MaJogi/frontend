@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import ValidationApi from '../services/ValidationApi'
+import { useEffect } from 'react'
+import ValidationApi from '../service/ValidationApi'
 
 const ValidationListComponentNew = ({ setValidations, validations }) => {
   useEffect(() => {

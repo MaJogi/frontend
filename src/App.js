@@ -1,6 +1,6 @@
 import './componentStyles/app.css'
-import FormComponent from './components/FormComponent'
-import ValidationListComponent from './components/ValidationListComponent'
+import FormComponent from './component/FormComponent'
+import ValidationListComponent from './component/ValidationListComponent'
 import { useState } from 'react'
 
 const App = () => {
