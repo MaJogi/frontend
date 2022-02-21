@@ -8,7 +8,15 @@ import { useState } from 'react'
 
 const FormComponent = ({ setValidations, validations }) => {
   const schema = yup.object().shape({
-    idCode: yup.string().min(11).max(11).required(),
+    // idCode: yup.string().min(11).max(11).required(),
+    idCode: yup
+      .number()
+      .required()
+      .test(
+        'len',
+        'Must be exactly 11 characters',
+        (val) => !val || (val && val.toString().length === 11)
+      ),
   })
 
   const {
