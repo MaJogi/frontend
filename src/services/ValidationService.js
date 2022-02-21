@@ -6,6 +6,6 @@ class ValidationService {
   getValidations() {
     return axios.get(VALIDATIONS_REST_API_URL)
   }
-}
+} 
 
 export default new ValidationService()

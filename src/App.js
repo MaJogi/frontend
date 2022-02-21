@@ -1,12 +1,15 @@
 import logo from './logo.svg'
 import './App.css'
-import ValidationComponent from './components/ValidationComponent'
+import ValidationListComponent from './components/ValidationListComponent'
+import FormComponent from './components/FormComponent'
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <ValidationComponent />
+        <FormComponent />
+        <hr></hr>
+        <ValidationListComponent />
       </header>
     </div>
   )
