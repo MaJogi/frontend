@@ -5,7 +5,7 @@ const VALIDATIONS_REST_API_URL_PROCESS_ID =
 const VALIDATIONS_REST_API_URL_VALIDATIONS =
   'http://localhost:8080/api/validations'
 
-class ValidationServiceOriginal {
+class ValidationService {
   processIdCode(data) {
     return axios.post(VALIDATIONS_REST_API_URL_PROCESS_ID, data, {
       headers: {
@@ -19,4 +19,4 @@ class ValidationServiceOriginal {
   }
 }
 
-export default new ValidationServiceOriginal()
+export default new ValidationService()

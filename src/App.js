@@ -1,5 +1,4 @@
-import './App.css'
-//import ValidationListComponent from './components/ValidationListComponent'
+import './componentStyles/app.css'
 import FormComponent from './components/FormComponent'
 import ValidationListComponent from './components/ValidationListComponent'
 import { useState } from 'react'
