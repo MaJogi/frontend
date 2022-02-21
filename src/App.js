@@ -1,7 +1,7 @@
 import './App.css'
 //import ValidationListComponent from './components/ValidationListComponent'
 import FormComponent from './components/FormComponent'
-import ValidationListComponentNew from './components/ValidationListComponentNew'
+import ValidationListComponent from './components/ValidationListComponent'
 import { useState } from 'react'
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
           validations={validations}
         />
         <hr></hr>
-        <ValidationListComponentNew
+        <ValidationListComponent
           setValidations={setValidations}
           validations={validations}
         />
