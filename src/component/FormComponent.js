@@ -8,7 +8,6 @@ import { useState } from 'react'
 
 const FormComponent = ({ setValidations, validations }) => {
   const schema = yup.object().shape({
-    // idCode: yup.string().min(11).max(11).required(),
     idCode: yup
       .number()
       .required()
@@ -37,29 +36,36 @@ const FormComponent = ({ setValidations, validations }) => {
   }
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
       <form
         method='post'
         action='processIdCode'
         onSubmit={handleSubmit(onSubmitHandler)}
       >
-        <h2>Please enter Personal Identification Code to validate it</h2>
+        <h2>Personal Identity Code validation page</h2>
         <br />
+
         <div className='form-group'>
           <label>Estonian identification code</label>
-          <input
-            className='form-control'
-            {...register('idCode')}
-            placeholder='Enter ID code'
-            type='text'
-            required
-          />
+          <div class='form-row'>
+            <div class='col'>
+              <input
+                className='form-control'
+                {...register('idCode')}
+                placeholder='Enter ID code'
+                type='text'
+                required
+              />
+            </div>
+            <div class='col-auto'>
+              <button type='submit' className='btn btn-secondary'>
+                Validate
+              </button>
+            </div>
+          </div>
           <p>{errors.idCode?.message}</p>
           <small className='form-text text-muted'>{validationResult}</small>
         </div>
-        <button type='submit' className='btn btn-secondary'>
-          Validate
-        </button>
       </form>
     </div>
   )

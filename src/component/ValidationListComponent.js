@@ -10,9 +10,9 @@ const ValidationListComponentNew = ({ setValidations, validations }) => {
   }, [])
 
   return (
-    <div className='container'>
-      <h1 className='text-center'> List of validation results</h1>
-      <table className='table table-striped'>
+    <div className='container mt-4'>
+      <h1 className='text-center'> Validation results</h1>
+      <table className='table table-striped mt-3'>
         <thead>
           <tr>
             <td>Date and Time</td>
