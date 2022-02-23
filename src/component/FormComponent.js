@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import '../componentStyles/formStyle.css'
+import '../componentStyle/formStyle.css'
 import '../css/bootstrap.min.css'
 import ValidationApi from '../service/ValidationApi'
 import { useState } from 'react'
