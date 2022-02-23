@@ -11,7 +11,7 @@ const ValidationListComponentNew = ({ setValidations, validations }) => {
 
   return (
     <div className='container mt-4'>
-      <h1 className='text-center'> Validation results</h1>
+      <h2 className='text-center'> Validation results</h2>
       <table className='table table-striped mt-3'>
         <thead>
           <tr>

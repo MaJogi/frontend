@@ -42,7 +42,7 @@ const FormComponent = ({ setValidations, validations }) => {
         action='processIdCode'
         onSubmit={handleSubmit(onSubmitHandler)}
       >
-        <h2>Personal Identity Code validation page</h2>
+        <h1>Personal Identity Code validation page</h1>
         <br />
 
         <div className='form-group'>
